@@ -1,0 +1,160 @@
+.absoluteContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mainContainer {
+    background-color: #116A7B;
+    border-radius: 15px;
+}
+
+.weatherInfoContainer {
+    background-color: #ECE5C7;
+    border-radius: 15px;
+}
+
+/*Large Devices (Laptops, Desktops)*/
+@media only screen and (min-width: 992px){
+    .mainContainer{
+        width: 850px;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .weatherInfoContainer{
+        width: 700px;
+        height: 250px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .extraInfoContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        height: 75%;
+        border-left: 1px solid #116A7B;
+    }
+
+    .tempInfoContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        border-right: 1px solid #116A7B;
+        height: 75%;
+    }
+
+    .mainTempContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondaryTempContainer {
+        display: flex;
+        gap: 25px;
+        border-top: 2px solid #116A7B;
+    }
+}
+
+/* Portrait Tablets and Large Phones */
+@media screen and (min-width:600px) and (max-width:991px) {
+    .mainContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        height: 600px;
+    }
+
+    .weatherInfoContainer{
+        width: 450px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondaryTempContainer{
+        display: flex;
+        justify-content: center;
+        gap: 55px;
+        border-top: 2px solid #116A7B;
+        border-bottom: 2px solid #116A7B;
+        width: 385px;
+    }
+
+    .mainTempContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .extraInfoContainer {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .weatherPhraseContainer {
+        width: 450px;
+    }
+}
+
+/* Phones */
+@media screen and (max-width:600px){
+    .mainContainer {
+        width: 300px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .weatherInfoContainer{
+        width: 270px;
+        height: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .secondaryTempContainer{
+        display: flex;
+        width: 230px;
+        border-top: 2px solid #116A7B;
+        border-bottom: 2px solid #116A7B;
+    }
+
+    .mainTempContainer{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .secondaryTempContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .extraInfoContainer{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+}

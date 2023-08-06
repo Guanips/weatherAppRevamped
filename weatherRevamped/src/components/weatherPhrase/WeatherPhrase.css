@@ -1,0 +1,27 @@
+.weatherPhrase {
+    color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+}
+
+@media screen and (min-width:992px){
+    .weatherPhrase{
+        font-size: 18px;
+        margin-top: 0px;
+    }
+}
+
+/* Portrait Tablets and Large Phones */
+@media screen and (min-width:600px)  and (max-width:991px) {
+    .weatherPhrase {
+        font-size: 18px;
+        
+    }
+}
+
+/* Phones */
+@media screen and (max-width:600px){
+    .weatherPhrase {
+        font-size: 18px;
+    }
+}

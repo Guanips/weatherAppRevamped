@@ -1,0 +1,26 @@
+.mainTemp {
+    @media only screen and (min-width:992px){
+       font-size: 50px;
+       margin-top: 0px;
+       margin-bottom: 0px; 
+    }
+
+}
+
+/* Portrait Tablets and Large Phones */
+@media screen and (min-width:600px)  and (max-width:991px) {
+    .mainTemp {
+        font-size: 65px;
+        margin-top: 0px;
+        margin-bottom: 0px; 
+    }
+}
+
+/* Phones */
+@media screen and (max-width:600px){
+    .mainTemp {
+        font-size: 60px;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+}
