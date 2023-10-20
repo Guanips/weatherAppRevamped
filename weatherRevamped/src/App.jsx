@@ -11,7 +11,7 @@ function App() {
 
   function getData(){
     useEffect(()=>{
-      fetch('https://api.api-ninjas.com/v1/weather?city=london', {
+      fetch('https://api.api-ninjas.com/v1/weather?city=ciudad autonoma de buenos aires', {
           method:'GET',
           headers: { 'X-Api-Key': 'VnghSB/uK7G7fN9L/sUrbQ==WJ1W7hXRzREo4GfJ'},
       })
