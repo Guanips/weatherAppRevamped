@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react'
+import { useEffect, useState} from 'react'
 import './App.css'
 import MainTempDisplay from './components/mainTempDisplay/MainTempDisplay.jsx'
 import SecondaryTempDisplay from './components/secondaryTempDisplay/SecondaryTempDisplay.jsx'
@@ -9,22 +9,44 @@ function App() {
   const [weatherData, setWeatherData] = useState({})
   const [loadingState, setLoadingState] = useState(true)
 
-  function getData(){
-    useEffect(()=>{
-      fetch('https://api.api-ninjas.com/v1/weather?city=ciudad autonoma de buenos aires', {
-          method:'GET',
-          headers: { 'X-Api-Key': 'VnghSB/uK7G7fN9L/sUrbQ==WJ1W7hXRzREo4GfJ'},
+  var lat = 0
+  var lon = 0
+
+  useEffect(() => {
+    console.log(lon)
+    console.log(lat)
+  
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(geoSuccess, geoFail)
+    }
+  
+    function geoSuccess(position){
+      lat = position.coords.latitude;
+      lon = position.coords.longitude;
+
+      fetch(`https://api.api-ninjas.com/v1/weather?lat=${lat}&lon=${lon}`, {
+        method:'GET',
+        headers: { 'X-Api-Key': 'VnghSB/uK7G7fN9L/sUrbQ==WJ1W7hXRzREo4GfJ'},
       })
       .then(res=>res.json())
       .then((res)=>{
           setWeatherData(res)
           setLoadingState(false)
       })
-  },[])
-  }
+    }
 
-  getData()
-  console.log(weatherData)
+    function geoFail(){
+      fetch(`https://api.api-ninjas.com/v1/weather?lat=${lat}&lon=${lon}`, {
+        method:'GET',
+        headers: { 'X-Api-Key': 'VnghSB/uK7G7fN9L/sUrbQ==WJ1W7hXRzREo4GfJ'},
+      })
+      .then(res=>res.json())
+      .then((res)=>{
+          setWeatherData(res)
+          setLoadingState(false)
+      })
+    }
+  }, [])
 
   return (
     <>
@@ -54,7 +76,6 @@ function App() {
           </div> 
         </div> 
       }
-
     </div>
     </>
   )
